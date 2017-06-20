@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import SampleComponent from './01-sample-component';
+import SampleFunctionalComponent from './02-sample-functional-component';
+import SampleButton from './03-sample-button';
 
-const App = () => {
-  return (
-    <div className="App">
-      hello world!
-    </div>
-  );
+export default class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
+        Hello World!
+        <SampleComponent myName="foo" />
+        <SampleFunctionalComponent myClass="foo" myName="bar" />
+        <SampleButton className="bar" onClick={()=>{alert("foo!")}}/>
+      </div>
+    );
+  }
+
 }
-
-export default App;
