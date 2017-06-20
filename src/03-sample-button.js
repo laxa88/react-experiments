@@ -1,25 +1,6 @@
 import React from 'react';
 
-const counter = (state=0, action) => {
-  switch (action.type) {
-    case 'INCREMENT': {
-      return state+1;
-    }
-    case 'DECREMENT': {
-      return state-1;
-    }
-    default: {
-      return state;
-    }
-  }
-}
-
-export default class SampleButton extends React.Component {
-
-  constructor() {
-    super();
-  }
-
+export default class Button extends React.Component {
   render() {
     return (
       <div>
@@ -29,5 +10,4 @@ export default class SampleButton extends React.Component {
       </div>
     );
   }
-
 }

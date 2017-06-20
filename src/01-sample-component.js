@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default class SampleComponent extends React.Component {
-
   constructor() {
     super();
   }
@@ -13,5 +12,4 @@ export default class SampleComponent extends React.Component {
       </div>
     );
   }
-
 }
