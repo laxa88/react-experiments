@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import { SampleReducer } from './04-sample-redux';
 
@@ -13,6 +14,8 @@ const sampleStore = createStore(
 );
 
 ReactDOM.render(
-  <App />
+  <Provider store={sampleStore}>
+    <App />
+  </Provider>
   , document.getElementById('root')
 );

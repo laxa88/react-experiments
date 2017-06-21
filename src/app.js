@@ -1,10 +1,12 @@
 import React from 'react';
+import * as ReactRedux from 'react-redux';
+
 import SampleComponent from './01-sample-component';
 import {StatelessComponent,StatelessFunctionalComponent} from './02-stateless-component';
 import SampleButton from './03-sample-button';
 import * as SampleRedux from './04-sample-redux';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -19,10 +21,18 @@ export default class App extends React.Component {
         <SampleButton className="bar" onClick={()=>{alert("foo!")}}/>
 
         <SampleRedux.SampleComponent
-
+          value={this.props.state}
+          onAdd={() => this.props.dispatch({ type: 'INCREMENT' })}
+          onMinus={() => this.props.dispatch({ type: 'DECREMENT' })}
         />
 
       </div>
     );
   }
 }
+
+export default ReactRedux.connect((state)=>{
+  return {
+    state: state
+  }
+})(App);
