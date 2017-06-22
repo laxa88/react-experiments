@@ -5,8 +5,10 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import { SampleReducer } from './04-sample-redux';
 
+// the 2nd parameter below is only required if you want
+// to view the redux store via chrome plugin.
 const sampleStore = createStore(
-    SampleReducer,
+  SampleReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
