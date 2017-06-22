@@ -10,6 +10,7 @@ class App extends React.Component {
         <div>
 
           <p>Welcome to the React Experiments project.</p>
+          <p>Note: This page is using BrowserRouter.</p>
 
           <SampleNavBar />
 
