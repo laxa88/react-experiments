@@ -1,38 +1,29 @@
 import React from 'react';
-import * as ReactRedux from 'react-redux';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-import SampleComponent from './01-sample-component';
-import {StatelessComponent,StatelessFunctionalComponent} from './02-stateless-component';
-import SampleButton from './03-sample-button';
-import * as SampleRedux from './04-sample-redux';
+import SampleContent1 from './05-sample-router/05-content-1';
+import SampleContent2 from './05-sample-router/05-content-2';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
+        <div>
+          Hello World!
 
-        Hello World!
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/foo1'>C1</Link></li>
+            <li><Link to='/foo2'>C2</Link></li>
+          </ul>
 
-        <SampleComponent myName="foo" />
+          <Route exact path='/foo1' component={SampleContent1} />
+          <Route exact path='/foo2' component={SampleContent2} />
 
-        <StatelessComponent myClass="foo" myName="bar" />
-        <StatelessFunctionalComponent myClass="foo" myName="bar" />
-
-        <SampleButton className="bar" onClick={()=>{alert("foo!")}}/>
-
-        <SampleRedux.SampleComponent
-          value={this.props.state}
-          onAdd={() => this.props.dispatch({ type: 'INCREMENT' })}
-          onMinus={() => this.props.dispatch({ type: 'DECREMENT' })}
-        />
-
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
-export default ReactRedux.connect((state)=>{
-  return {
-    state: state
-  }
-})(App);
+export default App
