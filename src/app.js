@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import SampleNavBar from './05-sample-router/05-navbar'
+import SampleBrowserRouter from './05-sample-router/browser-router/home'
+import SampleHashRouter from './05-sample-router/hash-router/home'
 
 class App extends React.Component {
   render() {
@@ -10,9 +11,12 @@ class App extends React.Component {
         <div>
 
           <p>Welcome to the React Experiments project.</p>
-          <p>Note: This page is using BrowserRouter.</p>
 
-          <SampleNavBar />
+          <SampleBrowserRouter />
+
+          <hr />
+
+          <SampleHashRouter />
 
         </div>
       </BrowserRouter>
