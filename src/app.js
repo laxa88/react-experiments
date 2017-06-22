@@ -1,38 +1,27 @@
-import React from 'react';
-import * as ReactRedux from 'react-redux';
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
-import SampleComponent from './01-sample-component';
-import {StatelessComponent,StatelessFunctionalComponent} from './02-stateless-component';
-import SampleButton from './03-sample-button';
-import * as SampleRedux from './04-sample-redux';
+import SampleBrowserRouter from './05-sample-router/browser-router/home'
+import SampleHashRouter from './05-sample-router/hash-router/home'
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
+        <div>
 
-        Hello World!
+          <p>Welcome to the React Experiments project.</p>
 
-        <SampleComponent myName="foo" />
+          <SampleBrowserRouter />
 
-        <StatelessComponent myClass="foo" myName="bar" />
-        <StatelessFunctionalComponent myClass="foo" myName="bar" />
+          <hr />
 
-        <SampleButton className="bar" onClick={()=>{alert("foo!")}}/>
+          <SampleHashRouter />
 
-        <SampleRedux.SampleComponent
-          value={this.props.state}
-          onAdd={() => this.props.dispatch({ type: 'INCREMENT' })}
-          onMinus={() => this.props.dispatch({ type: 'DECREMENT' })}
-        />
-
-      </div>
-    );
+        </div>
+      </BrowserRouter>
+    )
   }
 }
 
-export default ReactRedux.connect((state)=>{
-  return {
-    state: state
-  }
-})(App);
+export default App
