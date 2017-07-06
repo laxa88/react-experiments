@@ -59,7 +59,7 @@ class SampleRedux2 extends React.Component {
             let complete = true
             let downloads = this.props.state.SampleReducer2.downloads
             for (let j = downloads.length; j--;) {
-              if (downloads[j] === null) {
+              if (downloads[j].data === null) {
                 complete = false
               }
             }
